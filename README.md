@@ -23,40 +23,63 @@
 - full = full data {(xA,xB)} VAE loss <br />
 - all = all data VAE losses, {xA}, {xB}, and {(xA,xB)} <br />
 
-#### 2-b) WG-VAE full/all: no private variables; induce q(z | xI, xT) from Product-of-Experts
+#### 2-b) WG-VAE full/all: no private variables; induce q(z | xA, xB) from Product-of-Experts
 
 - Wu-Goodman's multi-modal VAE
 - no partition of latent variables, just shared z <br />
 - dim(z) = 7 <br />
 
-- full = full data {(xI,xT)} VAE loss <br />
+- full = full data {(xA,xB)} VAE loss <br />
 - all = all data VAE losses, {xA}, {xB}, and {(xA,xB)} <br />
 
 ---
 
-### + Latent traversal: (xA,xB) -> z or (zA,zS,zB), from which traverse along each axis -> (xI',xT')
+### + Latent traversal: (xA,xB) -> z or (zA,zS,zB), from which traverse along each axis -> (xA',BT')
 
 (at iter 300K) <br />
 
-#### Trv-a) MuMo-VAE model
+#### Trv-a) MMVAE-full
 
 3 instances, each: <br />
-True xI | xI w/ zI(1) change |  xI w/ zI(2) | xI w/ zS(1) | xI w/ zS(2) | ... | xI w/ zT(1) | xI w/ zT(2) <br />
-True xT | xT w/ zI(1) change |  xT w/ zI(2) | xT w/ zS(1) | xT w/ zS(2) | ... | xT w/ zT(1) | xT w/ zT(2) <br />
+True xA | xA w/ zA(1) change |  xA w/ zA(2) | xA w/ zS(1) | xA w/ zS(2) | ... | xA w/ zB(1) | xA w/ zB(2) <br />
+True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | xB w/ zB(1) | xB w/ zB(2) <br />
 
-![fixed3](https://user-images.githubusercontent.com/44901665/55629573-6b232400-57ab-11e9-8cef-b84f3a651b9a.gif)<br />
-![fixed2](https://user-images.githubusercontent.com/44901665/55629559-6494ac80-57ab-11e9-9ab3-4947889314c6.gif)<br />
-![fixed1](https://user-images.githubusercontent.com/44901665/55629533-53e43680-57ab-11e9-87fd-82af64fe49a6.gif)<br />
+![fixed3](https://user-images.githubusercontent.com/44901665/55707692-1a464200-59dc-11e9-9dd7-74e4b2689830.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/55707696-1c100580-59dc-11e9-9f5c-acc72ba4bc16.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/55707689-187c7e80-59dc-11e9-8d32-fd81339967f0.gif)
 
-(note: quite accurately identify private and shared factors, but computational issue of having dyadic inf net) <br />
+(note: problematic! eg, zS(1) learns elevation factor, but it should be a private factor in zI)<br />
 
-#### Trv-b) Vanilla VAE regarding (xI,xT) as (concatenated) observation
+#### Trv-b) MM-VAE-all
 
 3 instances, each: <br />
-True xI | xI w/ z(1) change |  xI w/ z(2) | ... | xI w/ z(10) <br />
-True xT | xT w/ z(1) change |  xT w/ z(2) | ... | xT w/ z(10) <br />
+True xA | xA w/ zA(1) change |  xA w/ zA(2) | xA w/ zS(1) | xA w/ zS(2) | ... | xA w/ zB(1) | xA w/ zB(2) <br />
+True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | xB w/ zB(1) | xB w/ zB(2) <br />
 
-![fixed3](https://user-images.githubusercontent.com/44901665/55629683-b3424680-57ab-11e9-9aa2-38293cd12790.gif)<br />
-![fixed2](https://user-images.githubusercontent.com/44901665/55629680-afaebf80-57ab-11e9-911d-b6ffda29fae3.gif)<br />
-![fixed1](https://user-images.githubusercontent.com/44901665/55629640-97d73b80-57ab-11e9-8f76-36f2cc3561c4.gif)<br />
+![fixed3](https://user-images.githubusercontent.com/44901665/55708062-eddef580-59dc-11e9-81bb-5d276bf26f6f.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/55708073-f33c4000-59dc-11e9-932b-37b55004d768.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/55708077-f5060380-59dc-11e9-8f58-bcfe19f5ddbf.gif)
+
+(note: better identify/discern the private and shared factors, which implies that the loss terms for marginal data, ie, {xI} and {xT}, are necessary?)<br />
+
+#### Trv-c) WGVAE-full
+
+3 instances, each: <br />
+True xA | xA w/ z(1) change |  xA w/ z(2) | ... | xA w/ z(7) <br />
+True xB | xB w/ z(1) change |  xB w/ z(2) | ... | xB w/ z(7) <br />
+
+
+![fixed3](https://user-images.githubusercontent.com/44901665/55861783-054de800-5b6f-11e9-81f9-4dde8d71347f.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/55861768-febf7080-5b6e-11e9-9560-1107a7c60450.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/55861753-f830f900-5b6e-11e9-8912-2fba57c4aa5f.gif)
+
+#### Trv-d) WGVAE-all
+
+3 instances, each: <br />
+True xA | xA w/ z(1) change |  xA w/ z(2) | ... | xA w/ z(7) <br />
+True xB | xB w/ z(1) change |  xB w/ z(2) | ... | xB w/ z(7) <br />
+
+![fixed3](https://user-images.githubusercontent.com/44901665/55861845-28789780-5b6f-11e9-9154-e5490b6555c6.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/55861850-2b738800-5b6f-11e9-8f85-21d4b8e21e47.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/55861825-21ea2000-5b6f-11e9-90b2-ac322220357c.gif)
 

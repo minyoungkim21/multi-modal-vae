@@ -34,7 +34,7 @@
 
 ---
 
-### + Latent traversal: (xA,xB) -> z or (zA,zS,zB), from which traverse along each axis -> (xA',BT')
+### + Latent traversal: (xA,xB) -> z or (zA,zS,zB), from which traverse along each axis -> (xA',xB')
 
 (at iter 300K) <br />
 

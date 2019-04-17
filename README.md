@@ -44,9 +44,9 @@
 True xA | xA w/ zA(1) change |  xA w/ zA(2) | xA w/ zS(1) | xA w/ zS(2) | ... | xA w/ zB(1) | xA w/ zB(2) <br />
 True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | xB w/ zB(1) | xB w/ zB(2) <br />
 
-![fixed3](https://user-images.githubusercontent.com/44901665/55707692-1a464200-59dc-11e9-9dd7-74e4b2689830.gif)
-![fixed2](https://user-images.githubusercontent.com/44901665/55707696-1c100580-59dc-11e9-9f5c-acc72ba4bc16.gif)
-![fixed1](https://user-images.githubusercontent.com/44901665/55707689-187c7e80-59dc-11e9-8d32-fd81339967f0.gif)
+![fixed0](https://user-images.githubusercontent.com/44901665/56276690-e6b19900-60fa-11e9-97c1-6aa44f5cb40f.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/56276691-e74a2f80-60fa-11e9-8fb4-670b355d874f.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/56276692-e74a2f80-60fa-11e9-8116-755016c05e18.gif)
 
 (note: problematic! eg, zS(1) learns elevation factor, but it should be a private factor in zI)<br />
 
@@ -56,9 +56,9 @@ True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | 
 True xA | xA w/ zA(1) change |  xA w/ zA(2) | xA w/ zS(1) | xA w/ zS(2) | ... | xA w/ zB(1) | xA w/ zB(2) <br />
 True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | xB w/ zB(1) | xB w/ zB(2) <br />
 
-![fixed3](https://user-images.githubusercontent.com/44901665/55708062-eddef580-59dc-11e9-81bb-5d276bf26f6f.gif)
-![fixed2](https://user-images.githubusercontent.com/44901665/55708073-f33c4000-59dc-11e9-932b-37b55004d768.gif)
-![fixed1](https://user-images.githubusercontent.com/44901665/55708077-f5060380-59dc-11e9-8f58-bcfe19f5ddbf.gif)
+![fixed0](https://user-images.githubusercontent.com/44901665/56276779-0d6fcf80-60fb-11e9-9a5b-7acfedbc9054.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/56276780-0d6fcf80-60fb-11e9-9333-efa028e6e3d2.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/56276783-0e086600-60fb-11e9-9446-5a52117bc91b.gif)
 
 (note: better identify/discern the private and shared factors, which implies that the loss terms for marginal data, ie, {xI} and {xT}, are necessary?)<br />
 
@@ -68,10 +68,9 @@ True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | 
 True xA | xA w/ z(1) change |  xA w/ z(2) | ... | xA w/ z(7) <br />
 True xB | xB w/ z(1) change |  xB w/ z(2) | ... | xB w/ z(7) <br />
 
-
-![fixed3](https://user-images.githubusercontent.com/44901665/55861783-054de800-5b6f-11e9-81f9-4dde8d71347f.gif)
-![fixed2](https://user-images.githubusercontent.com/44901665/55861768-febf7080-5b6e-11e9-9560-1107a7c60450.gif)
-![fixed1](https://user-images.githubusercontent.com/44901665/55861753-f830f900-5b6e-11e9-8912-2fba57c4aa5f.gif)
+![fixed0](https://user-images.githubusercontent.com/44901665/56276923-57f14c00-60fb-11e9-9120-fcd54e96f6c9.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/56276924-5889e280-60fb-11e9-9b36-4df3dcf504ad.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/56276926-5889e280-60fb-11e9-899f-8078c8283bbf.gif)
 
 #### Trv-d) WGVAE-all
 
@@ -79,7 +78,7 @@ True xB | xB w/ z(1) change |  xB w/ z(2) | ... | xB w/ z(7) <br />
 True xA | xA w/ z(1) change |  xA w/ z(2) | ... | xA w/ z(7) <br />
 True xB | xB w/ z(1) change |  xB w/ z(2) | ... | xB w/ z(7) <br />
 
-![fixed3](https://user-images.githubusercontent.com/44901665/55861845-28789780-5b6f-11e9-9154-e5490b6555c6.gif)
-![fixed2](https://user-images.githubusercontent.com/44901665/55861850-2b738800-5b6f-11e9-8f85-21d4b8e21e47.gif)
-![fixed1](https://user-images.githubusercontent.com/44901665/55861825-21ea2000-5b6f-11e9-90b2-ac322220357c.gif)
+![fixed0](https://user-images.githubusercontent.com/44901665/56276992-6fc8d000-60fb-11e9-8afc-d39acd15dab2.gif)
+![fixed2](https://user-images.githubusercontent.com/44901665/56276994-70616680-60fb-11e9-92bc-84f1d30169a0.gif)
+![fixed1](https://user-images.githubusercontent.com/44901665/56276995-70616680-60fb-11e9-92e9-8a01951e34f3.gif)
 

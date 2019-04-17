@@ -50,7 +50,7 @@ True xB | xB w/ zB(1) change |  xB w/ zB(2) | xB w/ zS(1) | xB w/ zS(2) | ... | 
 
 (note: problematic! eg, zS(1) learns elevation factor, but it should be a private factor in zI)<br />
 
-#### Trv-b) MM-VAE-all
+#### Trv-b) MMVAE-all
 
 3 instances, each: <br />
 True xA | xA w/ zA(1) change |  xA w/ zA(2) | xA w/ zS(1) | xA w/ zS(2) | ... | xA w/ zB(1) | xA w/ zB(2) <br />
